@@ -10,7 +10,13 @@ CI provides SSL using Let's Encrypt in production.
 
 ## Installing the certificates
 
-Copy the files in ./localhost-ssl to ~/.localhost-ssl
+1. Trust the Certificate Authority root
+
+	```bash
+		sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain certificate-authority/tapend-ca.pem
+	```
+	
+2. Copy the files in ./localhost-ssl to ~/.localhost-ssl
 
 ```bash
 	mkdir ~/.localhost-ssl
